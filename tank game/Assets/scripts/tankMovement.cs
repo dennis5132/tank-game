@@ -15,10 +15,13 @@ public class tankMovement : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject shootPoint;
     public float bSpeed;
+
+    public CharacterController characterController;
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -27,21 +30,21 @@ public class tankMovement : MonoBehaviour
         //Vector2 moveInput = moveAction.
         //float rotationInput = moveAction.Player.Rotate.ReadValue<float>();
     }
-    void OnMove(InputValue direction)
+    public void OnMove(InputAction.CallbackContext direction)
     {
         
-        var v = direction.Get<Vector2>();
+        var v = direction.ReadValue<Vector2>();
         Vector3 moveDir = (transform.forward * v.y) + (transform.right * v.x);
         Debug.Log(v);
         body.velocity = moveDir * speed * Time.deltaTime;
     }
 
-    void OnRotate(InputValue direction)
+    public void OnRotate(InputAction.CallbackContext direction)
     {
-        var v = direction.Get<float>();
+        var v = direction.ReadValue<float>();
         transform.Rotate(Vector3.up * v * rotSpeed * Time.deltaTime);
     }
-    void OnFire()
+    public void OnFire()
     {
         var newBullet = Instantiate(bulletPrefab, shootPoint.transform.position, GetComponentInChildren<Transform>().rotation);
         Rigidbody rbnewBullet = newBullet.GetComponent<Rigidbody>();

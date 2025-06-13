@@ -34,12 +34,12 @@
                 },
                 {
                     "name": "Rotate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "589766ab-1ddf-406b-a366-81aa9406cfc0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -341,7 +341,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "Negative",
                     "id": "7f9102dd-d566-4cb9-ba00-2431e2bcb664",
                     "path": "<Keyboard>/q",
                     "interactions": "",
@@ -352,7 +352,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Positive",
                     "id": "c2c77ad3-02d3-44fb-9ebd-d5863f589995",
                     "path": "<Keyboard>/e",
                     "interactions": "",
