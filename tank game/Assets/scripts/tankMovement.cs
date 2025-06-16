@@ -18,16 +18,13 @@ public class TankMovement : MonoBehaviour
 
     private Vector2 moveInput = Vector2.zero;
     private float rotateInput = 0f;
-    private float AimInput = 0f;
-
-    //public Rigidbody cannonrb;
-    //public int health = 3;
+    public GameObject cannon;
+    public int health = 3;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        //cannonrb = GetComponentInChildren<Rigidbody>();
-        //Debug.Log(cannonrb);
+        
     }
 
     private void FixedUpdate()
@@ -56,16 +53,11 @@ public class TankMovement : MonoBehaviour
             Shoot();
         }
     }
-    public void OnAim(InputAction.CallbackContext context)
-    {
-        Debug.Log("aiming");
-        AimInput = context.ReadValue<float>();
-    }
 
     private void MoveTank()
     {
         Vector3 moveDirection = transform.forward * moveInput.y 
-            + transform.right * moveInput.x
+            //+ transform.right * moveInput.x
             ;
         Vector3 velocity = moveDirection.normalized * moveSpeed;
         rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
@@ -88,20 +80,13 @@ public class TankMovement : MonoBehaviour
         bulletRb.AddForce(shootPoint.forward * bulletSpeed);
     }
 
-    //private void Aim()
-    //{
-    //    float aiming = AimInput * rotationSpeed * Time.fixedDeltaTime;
-    //    Quaternion turnRotation = Quaternion.Euler(0f, aiming, 0f);
-    //    cannonrb.MoveRotation(cannonrb.rotation * turnRotation);
-    //}
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("projectile"))
-    //    {
-    //        health--;
-    //        Debug.Log(health);
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("projectile"))
+        {
+            health--;
+            Debug.Log(health);
+        }
+    }
 
 }
