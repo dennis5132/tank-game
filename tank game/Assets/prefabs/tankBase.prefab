@@ -148,70 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2583de1d975974c88c63b2eff55116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  moveSpeed: 5
   rotSpeed: 200
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 320d89ad-df71-43cf-bcb2-ba4aba9dac92
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 1D Axis
-      m_Id: 3897bf65-d265-4e30-a750-25dd40a818b4
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: bff2efca-ab0b-45e2-8df3-5bfc28a06f11
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: 817f4e80-cadc-49c0-8f3a-2147757b888f
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: 1D Axis
-      m_Id: e0d4cb16-a978-4339-bd0f-f25aa17e49cd
-      m_Path: 1DAxis
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 4
-    - m_Name: negative
-      m_Id: d69e20a8-4714-43d2-a345-cd0c9c66774c
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    - m_Name: positive
-      m_Id: df1bce26-8f5b-4d2e-a1f7-78137bc38c25
-      m_Path: <Keyboard>/e
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Move
-      m_Flags: 8
-    m_Flags: 0
-  body: {fileID: 6946301640767546368}
   bulletPrefab: {fileID: 3784368627885132984, guid: 841c69fdedde765408fc8fd167895b6e, type: 3}
-  shootPoint: {fileID: 802508119841113230}
-  bSpeed: 500
-  characterController: {fileID: 0}
+  shootPoint: {fileID: 3107545110596782058}
+  bulletSpeed: 700
 --- !u!114 &5458304858898825098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,8 +282,16 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 040e81ac-68eb-4bb5-9467-55312cff7c60
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b65025b9-bb32-4962-9018-dddf6aafe3f5
+    m_ActionName: player2/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f618aa7f-9e1a-4804-9eb1-e1f6f8ad2175
+    m_ActionName: player2/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: player1
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

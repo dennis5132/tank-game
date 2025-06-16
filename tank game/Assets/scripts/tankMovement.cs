@@ -1,67 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
-public class tankMovement : MonoBehaviour
+[RequireComponent(typeof(Rigidbody))]
+public class TankMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float rotSpeed = 5f;
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float rotationSpeed = 150f;
 
-    public InputAction moveAction;
-    //private Action inputActions;
-    public Rigidbody body;
-    public GameObject bulletPrefab;
-    public GameObject shootPoint;
-    public float bSpeed;
+    [Header("Shooting Settings")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private float bulletSpeed = 700f;
 
-    public CharacterController characterController;
-    // Start is called before the first frame update
-    void Start()
-    {
-        body = GetComponent<Rigidbody>();
-        characterController = GetComponent<CharacterController>();
-    }
+    private Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    private Vector2 moveInput = Vector2.zero;
+    private float rotateInput = 0f;
+    public GameObject cannon;
+    public int health = 3;
+
+    private void Awake()
     {
-        //Vector2 moveInput = moveAction.
-        //float rotationInput = moveAction.Player.Rotate.ReadValue<float>();
-    }
-    public void OnMove(InputAction.CallbackContext direction)
-    {
+        rb = GetComponent<Rigidbody>();
         
-        var v = direction.ReadValue<Vector2>();
-        Vector3 moveDir = (transform.forward * v.y) + (transform.right * v.x);
-        Debug.Log(v);
-        body.velocity = moveDir * speed * Time.deltaTime;
     }
 
-    public void OnRotate(InputAction.CallbackContext direction)
+    private void FixedUpdate()
     {
-        var v = direction.ReadValue<float>();
-        transform.Rotate(Vector3.up * v * rotSpeed * Time.deltaTime);
+        MoveTank();
+        RotateTank();
     }
-    public void OnFire()
+
+    // Wordt aangeroepen door PlayerInput component (Send Messages) bij Move actie
+    public void OnMove(InputAction.CallbackContext context)
     {
-        var newBullet = Instantiate(bulletPrefab, shootPoint.transform.position, GetComponentInChildren<Transform>().rotation);
-        Rigidbody rbnewBullet = newBullet.GetComponent<Rigidbody>();
-        rbnewBullet.AddForce(rbnewBullet.transform.forward * bSpeed);
+        moveInput = context.ReadValue<Vector2>();
+        Debug.Log(moveInput);
     }
-    //private void Awake()
-    //{
-    //    inputActions = new Action();
-    //}
 
-    //private void OnEnable()
-    //{
-    //    inputActions.Enable();
-    //}
+    // Wordt aangeroepen door PlayerInput component bij Rotate actie
+    public void OnRotate(InputAction.CallbackContext context)
+    {
+        rotateInput = context.ReadValue<float>();
+        Debug.Log(rotateInput);
+    }
 
-    //private void OnDisable()
-    //{
-    //    inputActions.Disable();
-    //}
+    // Wordt aangeroepen door PlayerInput component bij Fire actie
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Shoot();
+        }
+    }
+
+    private void MoveTank()
+    {
+        Vector3 moveDirection = transform.forward * moveInput.y + transform.right * moveInput.x;
+        Vector3 velocity = moveDirection.normalized * moveSpeed;
+        rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
+    }
+
+    private void RotateTank()
+    {
+        float rotation = rotateInput * rotationSpeed * Time.fixedDeltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, rotation, 0f);
+        rb.MoveRotation(rb.rotation * turnRotation);
+    }
+
+    private void Shoot()
+    {
+        if (bulletPrefab == null || shootPoint == null)
+            return;
+
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        bulletRb.AddForce(shootPoint.forward * bulletSpeed);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("projectile"))
+        {
+            health--;
+            Debug.Log(health);
+        }
+    }
+
 }
