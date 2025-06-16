@@ -37,14 +37,12 @@ public class TankMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        Debug.Log(moveInput);
     }
 
     // Wordt aangeroepen door PlayerInput component bij Rotate actie
     public void OnRotate(InputAction.CallbackContext context)
     {
         rotateInput = context.ReadValue<float>();
-        Debug.Log(rotateInput);
     }
 
     // Wordt aangeroepen door PlayerInput component bij Fire actie
@@ -58,7 +56,9 @@ public class TankMovement : MonoBehaviour
 
     private void MoveTank()
     {
-        Vector3 moveDirection = transform.forward * moveInput.y + transform.right * moveInput.x;
+        Vector3 moveDirection = transform.forward * moveInput.y 
+            //+ transform.right * moveInput.x
+            ;
         Vector3 velocity = moveDirection.normalized * moveSpeed;
         rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
     }

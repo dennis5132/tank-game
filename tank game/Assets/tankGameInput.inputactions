@@ -68,28 +68,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "d2581a9b-1d11-4566-b27d-b92aff5fabbc",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "fcfe95b8-67b9-4526-84b5-5d0bc98d6400",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
                     "path": "<Keyboard>/f",
@@ -114,7 +92,7 @@
                 {
                     "name": "negative",
                     "id": "252a8d18-3c5c-490b-a44e-a7dde5aafc15",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -125,7 +103,7 @@
                 {
                     "name": "positive",
                     "id": "0c09c57b-8a73-49ca-a36e-2e3e2fb9cd77",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -182,7 +160,7 @@
                 {
                     "name": "up",
                     "id": "b7a3fbe4-7356-4eeb-92d8-c17eb3344167",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -193,29 +171,7 @@
                 {
                     "name": "down",
                     "id": "04964d6a-2888-467e-ac23-843a84cf28c0",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "f3f35fac-d02e-4bd9-b6fe-6f5869ff159a",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "e269e3dc-cf60-448c-94a5-d5250f5c7df0",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -226,7 +182,7 @@
                 {
                     "name": "",
                     "id": "76f8c7af-c084-4324-8357-8cbc740e93d5",
-                    "path": "<Keyboard>/rightCtrl",
+                    "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -248,7 +204,7 @@
                 {
                     "name": "negative",
                     "id": "24ea2265-0210-400e-a0e3-47954cb26768",
-                    "path": "<Keyboard>/slash",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -259,7 +215,7 @@
                 {
                     "name": "positive",
                     "id": "250f0265-50a5-475b-a56c-5e5a668792a5",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
