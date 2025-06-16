@@ -18,8 +18,12 @@ public class TankMovement : MonoBehaviour
 
     private Vector2 moveInput = Vector2.zero;
     private float rotateInput = 0f;
-    public GameObject cannon;
+    private float AimInput = 0f;
+
+    public Rigidbody cannon;
     public int health = 3;
+
+    private bool moving = false;
 
     private void Awake()
     {
@@ -27,16 +31,34 @@ public class TankMovement : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (moveInput == Vector2.zero)
+        {
+            moving = false;
+        }
+        else
+        {
+            moving = true;
+        }
+        //Debug.Log(moving);
+    }
+
     private void FixedUpdate()
     {
         MoveTank();
         RotateTank();
+        if (!moving)
+        {
+            AimCannon();
+        }
     }
 
     // Wordt aangeroepen door PlayerInput component (Send Messages) bij Move actie
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+        
     }
 
     // Wordt aangeroepen door PlayerInput component bij Rotate actie
@@ -53,7 +75,10 @@ public class TankMovement : MonoBehaviour
             Shoot();
         }
     }
-
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        AimInput = context.ReadValue<float>();
+    }
     private void MoveTank()
     {
         Vector3 moveDirection = transform.forward * moveInput.y 
@@ -78,6 +103,13 @@ public class TankMovement : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         bulletRb.AddForce(shootPoint.forward * bulletSpeed);
+    }
+
+    private void AimCannon()
+    {
+        float rotation = AimInput * rotationSpeed * Time.fixedDeltaTime;
+        Quaternion turnRotation = Quaternion.Euler(rotation, 0f, 0f);
+        cannon.MoveRotation(cannon.rotation * turnRotation);
     }
 
     private void OnCollisionEnter(Collision collision)
