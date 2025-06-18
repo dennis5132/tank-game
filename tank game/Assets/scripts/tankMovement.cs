@@ -21,14 +21,15 @@ public class TankMovement : MonoBehaviour
     private float AimInput = 0f;
 
     public Rigidbody cannon;
-    public int health = 3;
+    public int startHealth = 3;
+    public int health;
 
     private bool moving = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        
+        health = startHealth;
     }
 
     private void Update()
@@ -117,7 +118,6 @@ public class TankMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("projectile"))
         {
             health--;
-            Debug.Log(health);
         }
     }
 
