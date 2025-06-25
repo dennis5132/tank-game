@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 46169665}
   - component: {fileID: 46169664}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: bluePlayerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: player 2
+  m_text: blue tank
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 579330889}
   - component: {fileID: 579330888}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: moveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 621458691}
   - component: {fileID: 621458690}
   m_Layer: 5
-  m_Name: Text (TMP) (3)
+  m_Name: fireText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 632439902}
   - component: {fileID: 632439901}
   m_Layer: 5
-  m_Name: Text (TMP) (4)
+  m_Name: rotateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 781311689}
   - component: {fileID: 781311688}
   m_Layer: 5
-  m_Name: Text (TMP) (11)
+  m_Name: explainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 895967908}
   - component: {fileID: 895967907}
   m_Layer: 5
-  m_Name: Text (TMP) (10)
+  m_Name: blueRotateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1291,7 +1291,7 @@ GameObject:
   - component: {fileID: 960463669}
   - component: {fileID: 960463668}
   m_Layer: 5
-  m_Name: Text (TMP) (5)
+  m_Name: redMoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1519,7 +1519,7 @@ GameObject:
   - component: {fileID: 1169515451}
   - component: {fileID: 1169515450}
   m_Layer: 5
-  m_Name: Text (TMP) (9)
+  m_Name: redRotateText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 1222078566}
   - component: {fileID: 1222078565}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: 'redTankText '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: player 1
+  m_text: red tank
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1787,7 +1787,7 @@ GameObject:
   - component: {fileID: 1475969753}
   - component: {fileID: 1475969752}
   m_Layer: 5
-  m_Name: Text (TMP) (6)
+  m_Name: blueMoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,7 +1921,7 @@ GameObject:
   - component: {fileID: 1488270750}
   - component: {fileID: 1488270749}
   m_Layer: 5
-  m_Name: Text (TMP) (8)
+  m_Name: redFireText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2055,7 +2055,7 @@ GameObject:
   - component: {fileID: 1493532992}
   - component: {fileID: 1493532991}
   m_Layer: 5
-  m_Name: Text (TMP) (7)
+  m_Name: blueFireText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2257,8 +2257,10 @@ GameObject:
   - component: {fileID: 2047844547}
   - component: {fileID: 2047844546}
   - component: {fileID: 2047844545}
+  - component: {fileID: 2047844549}
+  - component: {fileID: 2047844548}
   m_Layer: 5
-  m_Name: Button
+  m_Name: returnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2378,6 +2380,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047844543}
   m_CullTransparentMesh: 1
+--- !u!114 &2047844548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047844543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5ebc8dab54f094e99cd155c9ae8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2047844549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047844543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a13d9a84fe59aa4f8203793da0ebd0c, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a91d3e4-aa3f-46be-b9f2-9d9189f7673a
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 27ce814a-c1e2-4373-9c71-015b7798410a
+    m_ActionName: Player/Fire[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d079d363-8234-480e-9e85-6474b7018128
+    m_ActionName: Player/Rotate[/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 424bbccb-828c-4b7f-9d49-c706d27fa7bf
+    m_ActionName: Player/Aim[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1cab92a-99bf-488e-9123-1a262792d121
+    m_ActionName: Player1/Move[/Keyboard/i,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5ed9d1b6-bb8b-45d4-a3b3-e74e7b66e19d
+    m_ActionName: Player1/Fire[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0e4e0396-cfb3-44ec-b4fe-cbd186ceab6a
+    m_ActionName: Player1/Rotate[/Keyboard/j,/Keyboard/l]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 479ac9d3-37d9-49c0-a446-98bdfcdf0f25
+    m_ActionName: Player1/Aim[/Keyboard/u,/Keyboard/o]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2af33e96-f747-4699-8c1a-e8da6bce3d17
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eb3dff50-967e-4975-b20e-e6f3cc2e4a02
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 36203d73-c80a-4adf-ba1d-da295ce72d79
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b9dd83c4-effc-4619-8ced-71eb3947728c
+    m_ActionName: UI/Point
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b009a896-6787-48f4-a7f7-02e2dc86f017
+    m_ActionName: UI/Click
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 048ae972-e9f0-4385-a6a8-cabdb7f45c5c
+    m_ActionName: UI/ScrollWheel
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 03a8cdbf-9bae-4610-8c00-da2ec81b568d
+    m_ActionName: UI/MiddleClick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2eb28823-8ad9-4bf6-ade6-4ded09193e5c
+    m_ActionName: UI/RightClick
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cc05f831-ba40-47a6-bdcb-233d87e5aaef
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 35c96c51-3a6e-4380-9a40-57a39200299c
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2047844548}
+        m_TargetAssemblyTypeName: controlReturn, Assembly-CSharp
+        m_MethodName: OnSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4597a5b4-9331-4f73-a69b-3840b0d234e1
+    m_ActionName: UI/Select[/Keyboard/enter]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/redWinScreen.unity
+    guid: 26af8c8ebcb1a9d488ec3825c8502727
+  - enabled: 1
+    path: Assets/Scenes/blueWinScreen.unity
+    guid: 40fcfa9252d27214189b615cb6eab3b6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: abca218232e8d27428d1f595a98fce6d, type: 2}
