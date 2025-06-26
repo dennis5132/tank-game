@@ -7,12 +7,16 @@ public class liveUIScript : MonoBehaviour
     public GameObject[] menuButtons;
     public int currentButton;
     private float navInput = 0;
-    public menuScript menu;    // Start is called before the first frame update
+    public menuScript menu;
+
+    public AudioSource Audio;
+    public AudioClip Clip;
     void Start()
     {
         currentButton = 0;
         menuButtons[currentButton].GetComponent<UnityEngine.UI.Image>().color = Color.green;
         Debug.Log(menuButtons);
+        Audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +27,7 @@ public class liveUIScript : MonoBehaviour
     public void OnNavigate(InputAction.CallbackContext context)
     {
         navInput = context.ReadValue<float>();
+        Audio.PlayOneShot(Clip);
         if (navInput == 1) 
         {
             currentButton++;
