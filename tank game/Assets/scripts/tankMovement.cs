@@ -108,8 +108,8 @@ public class TankMovement : MonoBehaviour
         Quaternion tankRotation = Quaternion.Euler(0f, rotation, 0f);
         rb.MoveRotation(rb.rotation * tankRotation);
 
-        // Cannon draait deels mee
-        Quaternion cannonRotation = Quaternion.Euler(rotation * 0.5f, 0f, 0f);
+        // Cannon draait mee
+        Quaternion cannonRotation = Quaternion.Euler(rotation, 0f, 0f);
         cannon.MoveRotation(cannon.rotation * cannonRotation);
     }
 

@@ -5,18 +5,8 @@ using UnityEngine;
 public class tankDestruction : MonoBehaviour
 {
     public tankManager tankManager;
-    //[SerializeField] private float effectDisplayTime;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public void doExplosion()
     {
         handleEffects();

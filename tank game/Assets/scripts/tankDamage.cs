@@ -21,7 +21,6 @@ public class tankDamage : MonoBehaviour
         if (exploding)
         {
             endTimer++;
-            //Debug.Log(endTimer);
         }
         if (endTimer > tankManager.endTime)
         {
